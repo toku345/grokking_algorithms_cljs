@@ -28,3 +28,10 @@
 (defn bye
   []
   (println "ok bye!"))
+
+
+(defn fact
+  [x]
+  (if (= x 1)
+    1
+    (* x (fact (- x 1)))))
