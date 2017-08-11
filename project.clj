@@ -12,6 +12,7 @@
                   :exclusions [org.clojure/tools.reader]]]
 
   :plugins [[lein-figwheel "0.5.10"]
+            [lein-doo "0.1.7"]
             [lein-cljsbuild "1.1.5" :exclusions [[org.clojure/clojure]]]]
 
   :source-paths ["src"]
@@ -46,7 +47,12 @@
                 :compiler {:output-to "resources/public/js/compiled/grokking_algorithms_cljs.js"
                            :main grokking_algorithms_cljs.core
                            :optimizations :advanced
-                           :pretty-print false}}]}
+                           :pretty-print false}}
+               {:id "test"
+                :source-paths ["src" "test"]
+                :compiler {:main grokking_algorithms_cljs.test-runner
+                           :output-to "resources/public/js/compiled/grokking_algorithms_cljs_test.js"
+                           :optimizations :none}}]}
 
   :figwheel {;; :http-server-root "public" ;; default and assumes "resources"
              ;; :server-port 3449 ;; default
