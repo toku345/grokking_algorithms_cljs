@@ -12,3 +12,19 @@
   (if (> i 0)
     (cons i (countdown (- i 1)))
     []))
+
+
+(defn greet
+  [name]
+  (println (str "hello, " name "!"))
+  (greet2 name)
+  (println "getting ready to say bye...")
+  (bye))
+
+(defn greet2
+  [name]
+  (println (str "how are you " name "?")))
+
+(defn bye
+  []
+  (println "ok bye!"))
