@@ -19,7 +19,7 @@
 
   :cljsbuild {:builds
               [{:id "dev"
-                :source-paths ["src" "test"]
+                :source-paths ["src"]
 
                 ;; the presence of a :figwheel configuration here
                 ;; will cause figwheel to inject the figwheel client
@@ -52,6 +52,7 @@
                 :source-paths ["src" "test"]
                 :compiler {:main grokking_algorithms_cljs.test-runner
                            :output-to "resources/public/js/compiled/grokking_algorithms_cljs_test.js"
+                           :output-dir "resources/public/js/compiled/test_out"
                            :optimizations :none}}]}
 
   :figwheel {;; :http-server-root "public" ;; default and assumes "resources"
