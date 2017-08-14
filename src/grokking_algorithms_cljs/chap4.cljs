@@ -11,3 +11,10 @@
 #_(defn sum
   [arr]
   (reduce + 0 arr))
+
+
+(defn count
+  [list]
+  (if (empty? list)
+    0
+    (+ 1 (count (rest list)))))
