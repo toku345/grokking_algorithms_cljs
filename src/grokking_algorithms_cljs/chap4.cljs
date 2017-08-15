@@ -28,3 +28,13 @@
 (defn mymax
   [xs]
   (apply maximum xs))
+
+
+(defn quicksort
+  [xs]
+  (if (< (count xs) 2)
+    xs
+    (let [pivot (nth xs 0)
+          less    (filter #(<= % pivot) (rest xs))
+          greater (filter #(>  % pivot) (rest xs))]
+      (concat (quicksort less) [pivot] (quicksort greater)))))
